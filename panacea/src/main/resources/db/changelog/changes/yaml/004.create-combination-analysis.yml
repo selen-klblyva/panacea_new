@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004
+      author: DrJavidKhalilov
+      changes:
+        - createTable:
+            tableName: combination_analysis
+            columns:
+              - column:
+                  name: combination_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: analysis_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+        - addPrimaryKey:
+            tableName: combination_analysis
+            columnNames: combination_id, analysis_id
+            constraintName: pk_combination_analysis
+        - addForeignKeyConstraint:
+            baseTableName: combination_analysis
+            baseColumnNames: combination_id
+            constraintName: fk_combination_analysis__combination
+            referencedTableName: combination
+            referencedColumnNames: id
+            onDelete: CASCADE
+        - addForeignKeyConstraint:
+            baseTableName: combination_analysis
+            baseColumnNames: analysis_id
+            constraintName: fk_combination_analysis__analysis
+            referencedTableName: analysis
+            referencedColumnNames: id
+            onDelete: RESTRICT
+        - createIndex:
+            tableName: combination_analysis
+            indexName: idx_combination_analysis_combo
+            columns:
+              - column: { name: combination_id }
+        - createIndex:
+            tableName: combination_analysis
+            indexName: idx_combination_analysis_analysis
+            columns:
+              - column: { name: analysis_id }

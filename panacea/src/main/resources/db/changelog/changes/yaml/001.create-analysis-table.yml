@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001
+      author: DrJavidKhalilov
+      changes:
+        - createTable:
+            tableName: analysis
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    unique: true
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: unit
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: normal_range_min
+                  type: numeric(10,2)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: normal_range_max
+                  type: numeric(10,2)
+                  constraints:
+                    nullable: true

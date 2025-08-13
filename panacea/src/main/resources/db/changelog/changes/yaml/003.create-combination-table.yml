@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003
+      author: DrJavidKhalilov
+      changes:
+        - createTable:
+            tableName: combination
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    unique: true
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: clinic_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: combination
+            baseColumnNames: clinic_id
+            constraintName: fk_combination_clinic
+            referencedTableName: clinic
+            referencedColumnNames: id
+            onDelete: RESTRICT
+        - createIndex:
+            tableName: combination
+            indexName: idx_combination_clinic_id
+            columns:
+              - column:
+                  name: clinic_id

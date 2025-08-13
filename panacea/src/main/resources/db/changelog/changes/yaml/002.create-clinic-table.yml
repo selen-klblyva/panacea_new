@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002
+      author: DrJavidKhalilov
+      changes:
+        - createTable:
+            tableName: clinic
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    unique: true
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(30)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address
+                  type: varchar(50)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: contact_number
+                  type: varchar(12)
+                  constraints:
+                    nullable: true

@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: 005
+      author: DrJavidKhalilov
+      changes:
+        - createTable:
+            tableName: result
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    unique: true
+                    primaryKey: true
+              - column:
+                  name: value
+                  type: decimal(10,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: analyse_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: comment
+                  type: varchar(255)
+                  constraints:
+                    nullable: true
+        - addForeignKeyConstraint:
+            baseTableName: result
+            baseColumnNames: analyse_id
+            constraintName: fk_result_analysis
+            referencedTableName: analysis
+            referencedColumnNames: id
+            onDelete: RESTRICT
+        - createIndex:
+            tableName: result
+            indexName: idx_result_analyse_id
+            columns:
+              - column:
+                  name: analyse_id
+
