@@ -1,9 +1,13 @@
 server:
   port: 8080
 
+file:
+  input-folder: C:\Users\010184\Desktop\checking-folder
+
 spring:
   application:
     name: panacea
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/panacea
@@ -23,9 +27,12 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
 
+  batch:
+    jdbc:
+      initialize-schema:
+
 minio:
   url: http://localhost:9000
-  access-key: minioadmin
-  secret-key: minioadmin
+  access-key: ${MINIO_ACCESS_KEY}
+  secret-key: ${MINIO_SECRET_KEY}
   bucket: my-bucket
-
