@@ -1,4 +1,4 @@
-package com.javidkhalilov.panacea.entity;
+package com.javidkhalilov.panacea.dao.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -9,7 +9,7 @@ import lombok.experimental.FieldDefaults;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@Builder()
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class UploadedFile {
     @Id

@@ -1,4 +1,4 @@
-package com.javidkhalilov.panacea.entity;
+package com.javidkhalilov.panacea.dao.entity;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;

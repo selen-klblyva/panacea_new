@@ -1,6 +1,6 @@
-package com.javidkhalilov.panacea.repository;
+package com.javidkhalilov.panacea.dao.repository;
 
-import com.javidkhalilov.panacea.entity.Result;
+import com.javidkhalilov.panacea.dao.entity.Result;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

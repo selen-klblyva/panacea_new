@@ -1,7 +1,7 @@
-package com.javidkhalilov.panacea.repository;
+package com.javidkhalilov.panacea.dao.repository;
 
-import com.javidkhalilov.panacea.entity.CombinationAnalysis;
-import com.javidkhalilov.panacea.entity.CombinationAnalysisId;
+import com.javidkhalilov.panacea.dao.entity.CombinationAnalysis;
+import com.javidkhalilov.panacea.dao.entity.CombinationAnalysisId;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,3 +9,4 @@ import org.springframework.stereotype.Repository;
 public interface CombinationAnalysisRepository extends JpaRepository<CombinationAnalysis, CombinationAnalysisId> {
 
 }
+

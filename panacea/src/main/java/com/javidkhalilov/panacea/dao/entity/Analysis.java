@@ -1,4 +1,4 @@
-package com.javidkhalilov.panacea.entity;
+package com.javidkhalilov.panacea.dao.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@Builder()
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Analysis {
     @Id

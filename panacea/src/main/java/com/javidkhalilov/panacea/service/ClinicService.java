@@ -1,18 +1,19 @@
 package com.javidkhalilov.panacea.service;
 
-
-import com.javidkhalilov.panacea.entity.Clinic;
+import com.javidkhalilov.panacea.dao.entity.Clinic;
+import com.javidkhalilov.panacea.dto.request.ClinicRequestDTO;
+import com.javidkhalilov.panacea.dto.response.ClinicResponseDTO;
 
 import java.util.List;
 
 public interface ClinicService {
-    Clinic createClinic(Clinic clinic);
+    ClinicResponseDTO createClinic(ClinicRequestDTO clinicRequestDTO);
 
-    List<Clinic> getAllClinics();
+    List<ClinicResponseDTO> getAllClinics();
 
-    Clinic getClinicById(Long id);
+    ClinicResponseDTO getClinicById(Long id);
 
-    Clinic updateClinic(Long id, Clinic updatedClinic);
+    ClinicResponseDTO updateClinic(Long id, ClinicRequestDTO clinicRequestDTO);
 
     void deleteClinicById(Long id);
 }
