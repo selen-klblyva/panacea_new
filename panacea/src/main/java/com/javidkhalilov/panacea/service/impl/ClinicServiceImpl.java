@@ -23,8 +23,8 @@ public class ClinicServiceImpl implements ClinicService {
 
     @Override
     public ClinicResponseDTO createClinic(ClinicRequestDTO clinicRequestDTO) {
-        Clinic clinic=clinicMapper.toEntity(clinicRequestDTO);
-        Clinic savedClinic=clinicRepository.save(clinic);
+        Clinic clinic = clinicMapper.toEntity(clinicRequestDTO);
+        Clinic savedClinic = clinicRepository.save(clinic);
         return clinicMapper.entityToResponseDTO(savedClinic);
     }
 
