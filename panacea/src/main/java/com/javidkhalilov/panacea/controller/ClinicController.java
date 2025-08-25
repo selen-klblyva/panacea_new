@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-@RequestMapping("/api/clinic")
+@RequestMapping("/api/clinics")
 public class ClinicController {
 
     final ClinicService clinicService;
