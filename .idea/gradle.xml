@@ -5,6 +5,7 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/panacea" />
+        <option name="gradleHome" value="C:\Program Files\Gradle\gradle-9.0.0" />
         <option name="gradleJvm" value="corretto-21" />
         <option name="modules">
           <set>
